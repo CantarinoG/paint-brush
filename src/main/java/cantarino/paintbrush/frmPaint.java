@@ -5,8 +5,8 @@ import javax.swing.JFrame;
 public class frmPaint extends javax.swing.JFrame {
 
     private enum TipoFigura {tfPonto, tfReta, tfCirculo, tfRetangulo, tfSpray, tfBorracha, tfPiramide, tfCilindro}
-    //private TipoFigura tipoFigura = TipoFigura.tfPonto; // variável controladora do tipo figura
-    //private Retangulo retangulo = new Retangulo();
+    private TipoFigura tipoFigura = TipoFigura.tfPonto; // variável controladora do tipo figura
+    private Retangulo retangulo = new Retangulo();
     
     public frmPaint() {
         initComponents();
@@ -17,7 +17,7 @@ public class frmPaint extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        pnlPaint = new javax.swing.JPanel();
         jColorChooser = new javax.swing.JColorChooser();
         btnPonto = new javax.swing.JButton();
         btnReta = new javax.swing.JButton();
@@ -36,16 +36,24 @@ public class frmPaint extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        pnlPaint.setBackground(new java.awt.Color(255, 255, 255));
+        pnlPaint.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                pnlPaintMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                pnlPaintMouseReleased(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pnlPaintLayout = new javax.swing.GroupLayout(pnlPaint);
+        pnlPaint.setLayout(pnlPaintLayout);
+        pnlPaintLayout.setHorizontalGroup(
+            pnlPaintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnlPaintLayout.setVerticalGroup(
+            pnlPaintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 402, Short.MAX_VALUE)
         );
 
@@ -53,26 +61,51 @@ public class frmPaint extends javax.swing.JFrame {
         btnPonto.setForeground(new java.awt.Color(0, 0, 0));
         btnPonto.setText("Ponto");
         btnPonto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnPonto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPontoMouseClicked(evt);
+            }
+        });
 
         btnReta.setBackground(new java.awt.Color(255, 255, 255));
         btnReta.setForeground(new java.awt.Color(0, 0, 0));
         btnReta.setText("Reta");
         btnReta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnReta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRetaMouseClicked(evt);
+            }
+        });
 
         btnCirculo.setBackground(new java.awt.Color(255, 255, 255));
         btnCirculo.setForeground(new java.awt.Color(0, 0, 0));
         btnCirculo.setText("Círculo");
         btnCirculo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnCirculo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCirculoMouseClicked(evt);
+            }
+        });
 
         btnRetangulo.setBackground(new java.awt.Color(255, 255, 255));
         btnRetangulo.setForeground(new java.awt.Color(0, 0, 0));
         btnRetangulo.setText("Retângulo");
         btnRetangulo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnRetangulo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRetanguloMouseClicked(evt);
+            }
+        });
 
         btnSpray.setBackground(new java.awt.Color(255, 255, 255));
         btnSpray.setForeground(new java.awt.Color(0, 0, 0));
         btnSpray.setText("Spray");
         btnSpray.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnSpray.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSprayMouseClicked(evt);
+            }
+        });
         btnSpray.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSprayActionPerformed(evt);
@@ -83,11 +116,21 @@ public class frmPaint extends javax.swing.JFrame {
         btnCilindro.setForeground(new java.awt.Color(0, 0, 0));
         btnCilindro.setText("Cilindro");
         btnCilindro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnCilindro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCilindroMouseClicked(evt);
+            }
+        });
 
         btnPiramide.setBackground(new java.awt.Color(255, 255, 255));
         btnPiramide.setForeground(new java.awt.Color(0, 0, 0));
         btnPiramide.setText("Pirâmide");
         btnPiramide.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnPiramide.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPiramideMouseClicked(evt);
+            }
+        });
         btnPiramide.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPiramideActionPerformed(evt);
@@ -98,6 +141,11 @@ public class frmPaint extends javax.swing.JFrame {
         btnBorracha.setForeground(new java.awt.Color(0, 0, 0));
         btnBorracha.setText("Borracha");
         btnBorracha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnBorracha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBorrachaMouseClicked(evt);
+            }
+        });
 
         chkArea.setForeground(new java.awt.Color(0, 0, 0));
         chkArea.setText("Exibir Área");
@@ -130,7 +178,7 @@ public class frmPaint extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlPaint, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnPonto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -162,7 +210,7 @@ public class frmPaint extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlPaint, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jColorChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -218,6 +266,63 @@ public class frmPaint extends javax.swing.JFrame {
         pnlCorInterna.setBackground(jColorChooser.getColor());
     }//GEN-LAST:event_pnlCorInternaMouseClicked
 
+    private void btnPontoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPontoMouseClicked
+        tipoFigura = tipoFigura.tfPonto;
+    }//GEN-LAST:event_btnPontoMouseClicked
+
+    private void btnRetaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRetaMouseClicked
+        tipoFigura = tipoFigura.tfReta;
+    }//GEN-LAST:event_btnRetaMouseClicked
+
+    private void btnSprayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSprayMouseClicked
+        tipoFigura = tipoFigura.tfSpray;
+    }//GEN-LAST:event_btnSprayMouseClicked
+
+    private void btnBorrachaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrachaMouseClicked
+        tipoFigura = tipoFigura.tfBorracha;
+    }//GEN-LAST:event_btnBorrachaMouseClicked
+
+    private void btnCirculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCirculoMouseClicked
+        tipoFigura = tipoFigura.tfCirculo;
+    }//GEN-LAST:event_btnCirculoMouseClicked
+
+    private void btnRetanguloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRetanguloMouseClicked
+        tipoFigura = tipoFigura.tfRetangulo;
+    }//GEN-LAST:event_btnRetanguloMouseClicked
+
+    private void btnPiramideMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPiramideMouseClicked
+        tipoFigura = tipoFigura.tfPiramide;
+    }//GEN-LAST:event_btnPiramideMouseClicked
+
+    private void btnCilindroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCilindroMouseClicked
+        tipoFigura = tipoFigura.tfCilindro;
+    }//GEN-LAST:event_btnCilindroMouseClicked
+
+    private void pnlPaintMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPaintMousePressed
+        if (tipoFigura == TipoFigura.tfPonto) {
+            Ponto p = new Ponto();
+            p.cor = pnlCorExterna.getBackground();
+            p.x = evt.getX();
+            p.y = evt.getY();
+            p.desenhar(pnlPaint.getGraphics());
+        }
+        else if (tipoFigura == TipoFigura.tfRetangulo){
+            retangulo.cor = pnlCorExterna.getBackground();
+            retangulo.corInterna = pnlCorInterna.getBackground();
+            retangulo.x = evt.getX();
+            retangulo.y = evt.getY();
+            
+        }
+    }//GEN-LAST:event_pnlPaintMousePressed
+
+    private void pnlPaintMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPaintMouseReleased
+        if (tipoFigura == TipoFigura.tfRetangulo) {
+            retangulo.base = evt.getX() - retangulo.x;
+            retangulo.largura = evt.getY() - retangulo.y;
+            retangulo.desenhar(pnlPaint.getGraphics());
+        }
+    }//GEN-LAST:event_pnlPaintMouseReleased
+
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -256,8 +361,8 @@ public class frmPaint extends javax.swing.JFrame {
     private javax.swing.JColorChooser jColorChooser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton pnlCorExterna;
     private javax.swing.JButton pnlCorInterna;
+    private javax.swing.JPanel pnlPaint;
     // End of variables declaration//GEN-END:variables
 }
