@@ -13,10 +13,10 @@ public class Circulo extends D2 {
     public float perimetro() { return 2 * PI * raio;}
     
     @Override public void desenhar(Graphics g){
-        super.desenhar(g); 
+        if(exibirArea) g.drawString(Float.toString(area()), x - raio, y - raio);
        g.setColor(corInterna);
-        g.fillOval(x - raio, y - raio, 2 * raio, 2 * raio);
-        g.setColor(cor);
-        g.drawOval(x - raio, y - raio, 2 * raio, 2 * raio);
+       g.fillOval(x - raio, y - raio, 2 * raio, 2 * raio);
+       g.setColor(cor);
+       g.drawOval(x - raio, y - raio, 2 * raio, 2 * raio);
     }
 }

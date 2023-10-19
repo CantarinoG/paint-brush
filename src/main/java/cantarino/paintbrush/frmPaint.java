@@ -358,6 +358,7 @@ public class frmPaint extends javax.swing.JFrame {
         else if (tipoFigura == TipoFigura.tfRetangulo){
             retangulo.cor = pnlCorExterna.getBackground();
             retangulo.corInterna = pnlCorInterna.getBackground();
+            retangulo.exibirArea = chkArea.isSelected();
             retangulo.x = evt.getX();
             retangulo.y = evt.getY();
         }
@@ -368,6 +369,7 @@ public class frmPaint extends javax.swing.JFrame {
             reta.y = evt.getY();
         }
         else if(tipoFigura == TipoFigura.tfCirculo) {
+            circulo.exibirArea = chkArea.isSelected();
             circulo.x = evt.getX();
             circulo.y = evt.getY();
         }
