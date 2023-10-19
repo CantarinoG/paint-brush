@@ -10,6 +10,7 @@ public class frmPaint extends javax.swing.JFrame {
     private Reta reta = new Reta();
     private Circulo circulo = new Circulo();
     private Borracha borracha = new Borracha(30);
+    private Spray spray = new Spray();
     
     public frmPaint() {
         initComponents();
@@ -387,6 +388,11 @@ public class frmPaint extends javax.swing.JFrame {
             p.x = evt.getX();
             p.y = evt.getY();
             p.desenhar(pnlPaint.getGraphics());
+        } else if(tipoFigura == TipoFigura.tfSpray) {
+            spray.cor = pnlCorExterna.getBackground();
+            spray.x = evt.getX();
+            spray.y = evt.getY();
+            spray.desenhar(pnlPaint.getGraphics());
         }
     }//GEN-LAST:event_pnlPaintMouseDragged
 
