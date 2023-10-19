@@ -1,7 +1,11 @@
 package cantarino.paintbrush;
 
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 
@@ -19,6 +23,7 @@ public class frmPaint extends javax.swing.JFrame {
     public frmPaint() {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setTitle("PaintBrush");
         btnDesenhar.setBackground(Color.LIGHT_GRAY);
     }
     
@@ -58,6 +63,7 @@ public class frmPaint extends javax.swing.JFrame {
         chkExibirCompr = new javax.swing.JCheckBox();
         chkPerimetro = new javax.swing.JCheckBox();
         btnPoligono = new javax.swing.JButton();
+        lblLink = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -92,6 +98,7 @@ public class frmPaint extends javax.swing.JFrame {
         btnPonto.setForeground(new java.awt.Color(0, 0, 0));
         btnPonto.setText("Ponto");
         btnPonto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnPonto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPonto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnPontoMouseClicked(evt);
@@ -102,6 +109,7 @@ public class frmPaint extends javax.swing.JFrame {
         btnReta.setForeground(new java.awt.Color(0, 0, 0));
         btnReta.setText("Reta");
         btnReta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnReta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnReta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnRetaMouseClicked(evt);
@@ -112,6 +120,7 @@ public class frmPaint extends javax.swing.JFrame {
         btnCirculo.setForeground(new java.awt.Color(0, 0, 0));
         btnCirculo.setText("Círculo");
         btnCirculo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnCirculo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCirculo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCirculoMouseClicked(evt);
@@ -122,6 +131,7 @@ public class frmPaint extends javax.swing.JFrame {
         btnRetangulo.setForeground(new java.awt.Color(0, 0, 0));
         btnRetangulo.setText("Retângulo");
         btnRetangulo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnRetangulo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRetangulo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnRetanguloMouseClicked(evt);
@@ -132,6 +142,7 @@ public class frmPaint extends javax.swing.JFrame {
         btnSpray.setForeground(new java.awt.Color(0, 0, 0));
         btnSpray.setText("Spray");
         btnSpray.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnSpray.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSpray.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSprayMouseClicked(evt);
@@ -147,6 +158,7 @@ public class frmPaint extends javax.swing.JFrame {
         btnCilindro.setForeground(new java.awt.Color(0, 0, 0));
         btnCilindro.setText("Cilindro");
         btnCilindro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnCilindro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCilindro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCilindroMouseClicked(evt);
@@ -157,6 +169,7 @@ public class frmPaint extends javax.swing.JFrame {
         btnPiramide.setForeground(new java.awt.Color(0, 0, 0));
         btnPiramide.setText("Pirâmide");
         btnPiramide.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnPiramide.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPiramide.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnPiramideMouseClicked(evt);
@@ -172,6 +185,7 @@ public class frmPaint extends javax.swing.JFrame {
         btnBorracha.setForeground(new java.awt.Color(0, 0, 0));
         btnBorracha.setText("Borracha");
         btnBorracha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnBorracha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnBorracha.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 btnBorrachaMouseDragged(evt);
@@ -214,6 +228,7 @@ public class frmPaint extends javax.swing.JFrame {
         btnDesenhar.setForeground(new java.awt.Color(0, 0, 0));
         btnDesenhar.setText("Desenhar");
         btnDesenhar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnDesenhar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDesenhar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnDesenharMouseClicked(evt);
@@ -236,9 +251,19 @@ public class frmPaint extends javax.swing.JFrame {
         btnPoligono.setText("Polígono");
         btnPoligono.setToolTipText("Após inserir 2 pontos ou mais, pressione o botão direito para finalizar.");
         btnPoligono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnPoligono.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPoligono.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnPoligonoMouseClicked(evt);
+            }
+        });
+
+        lblLink.setForeground(new java.awt.Color(0, 102, 204));
+        lblLink.setText("<html><u>Feito por @CantarinoG</u></html>");
+        lblLink.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblLink.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblLinkMouseClicked(evt);
             }
         });
 
@@ -251,39 +276,44 @@ public class frmPaint extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnPonto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnReta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnSpray, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnBorracha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnDesenhar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(42, 42, 42))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(chkExibirCompr)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnPonto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnReta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnSpray, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnBorracha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnDesenhar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(42, 42, 42))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(chkExibirCompr)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnCirculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnRetangulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnPoligono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(42, 42, 42)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnCilindro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnPiramide, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btnCirculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(btnRetangulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(btnPoligono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(42, 42, 42)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btnCilindro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(btnPiramide, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(chkArea, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                                        .addGap(142, 142, 142)))
+                                .addGap(41, 41, 41))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(chkArea, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
-                                .addGap(142, 142, 142)))
-                        .addGap(41, 41, 41))
+                                .addComponent(chkPerimetro)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pnlCorExterna, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                            .addComponent(pnlCorInterna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(chkPerimetro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlCorExterna, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-                    .addComponent(pnlCorInterna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                        .addComponent(lblLink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jColorChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -332,7 +362,8 @@ public class frmPaint extends javax.swing.JFrame {
                             .addComponent(chkPerimetro))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnBorracha, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22))))
+                        .addGap(2, 2, 2)
+                        .addComponent(lblLink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         pack();
@@ -503,6 +534,14 @@ public class frmPaint extends javax.swing.JFrame {
         btnPoligono.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_btnPoligonoMouseClicked
 
+    private void lblLinkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLinkMouseClicked
+        try {
+            Desktop.getDesktop().browse(new URI("https://github.com/CantarinoG"));
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_lblLinkMouseClicked
+
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -545,6 +584,7 @@ public class frmPaint extends javax.swing.JFrame {
     private javax.swing.JColorChooser jColorChooser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblLink;
     private javax.swing.JButton pnlCorExterna;
     private javax.swing.JButton pnlCorInterna;
     private javax.swing.JPanel pnlPaint;
