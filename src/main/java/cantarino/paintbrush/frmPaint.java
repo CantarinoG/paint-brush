@@ -9,6 +9,7 @@ public class frmPaint extends javax.swing.JFrame {
     private Retangulo retangulo = new Retangulo();
     private Reta reta = new Reta();
     private Circulo circulo = new Circulo();
+    private Borracha borracha = new Borracha(30);
     
     public frmPaint() {
         initComponents();
@@ -39,6 +40,11 @@ public class frmPaint extends javax.swing.JFrame {
         setBackground(new java.awt.Color(0, 0, 0));
 
         pnlPaint.setBackground(new java.awt.Color(255, 255, 255));
+        pnlPaint.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                pnlPaintMouseDragged(evt);
+            }
+        });
         pnlPaint.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 pnlPaintMousePressed(evt);
@@ -143,6 +149,11 @@ public class frmPaint extends javax.swing.JFrame {
         btnBorracha.setForeground(new java.awt.Color(0, 0, 0));
         btnBorracha.setText("Borracha");
         btnBorracha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnBorracha.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                btnBorrachaMouseDragged(evt);
+            }
+        });
         btnBorracha.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnBorrachaMouseClicked(evt);
@@ -343,6 +354,19 @@ public class frmPaint extends javax.swing.JFrame {
             circulo.desenhar(pnlPaint.getGraphics());
         }
     }//GEN-LAST:event_pnlPaintMouseReleased
+
+    private void btnBorrachaMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrachaMouseDragged
+
+    }//GEN-LAST:event_btnBorrachaMouseDragged
+
+    private void pnlPaintMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPaintMouseDragged
+        if(tipoFigura == TipoFigura.tfBorracha){
+            borracha.corInterna = pnlCorInterna.getBackground();
+            borracha.x = evt.getX();
+            borracha.y = evt.getY();
+            borracha.desenhar(pnlPaint.getGraphics());
+        }
+    }//GEN-LAST:event_pnlPaintMouseDragged
 
     public static void main(String args[]) {
         try {
