@@ -418,6 +418,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Pol&#xed;gono"/>
+        <Property name="toolTipText" type="java.lang.String" value="Ap&#xf3;s inserir 2 pontos ou mais, pressione o bot&#xe3;o direito para finalizar."/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder/>

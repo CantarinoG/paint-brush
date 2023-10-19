@@ -1,6 +1,8 @@
 package cantarino.paintbrush;
 
 import java.awt.Color;
+import java.awt.event.MouseEvent;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 
 public class frmPaint extends javax.swing.JFrame {
@@ -12,6 +14,7 @@ public class frmPaint extends javax.swing.JFrame {
     private Circulo circulo = new Circulo();
     private Borracha borracha = new Borracha(30);
     private Spray spray = new Spray();
+    private Poligono poligono = new Poligono();
     
     public frmPaint() {
         initComponents();
@@ -231,6 +234,7 @@ public class frmPaint extends javax.swing.JFrame {
         btnPoligono.setBackground(new java.awt.Color(255, 255, 255));
         btnPoligono.setForeground(new java.awt.Color(0, 0, 0));
         btnPoligono.setText("Polígono");
+        btnPoligono.setToolTipText("Após inserir 2 pontos ou mais, pressione o botão direito para finalizar.");
         btnPoligono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnPoligono.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -429,6 +433,14 @@ public class frmPaint extends javax.swing.JFrame {
             circulo.exibirPerimetro = chkPerimetro.isSelected();
             circulo.x = evt.getX();
             circulo.y = evt.getY();
+        }
+        else if(tipoFigura == TipoFigura.tfPoligono) {
+            if(poligono.listaPontos.size() >= 2 && evt.getButton() == MouseEvent.BUTTON3) poligono.desenhar(pnlPaint.getGraphics());
+            else {
+                poligono.cor = pnlCorExterna.getBackground();
+                poligono.corInterna = pnlCorInterna.getBackground();
+                poligono.adicionarPonto(evt.getX(), evt.getY());
+            }
         }
     }//GEN-LAST:event_pnlPaintMousePressed
 
