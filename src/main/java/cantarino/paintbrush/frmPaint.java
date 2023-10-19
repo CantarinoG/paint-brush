@@ -38,6 +38,7 @@ public class frmPaint extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnDesenhar = new javax.swing.JButton();
         chkExibirCompr = new javax.swing.JCheckBox();
+        chkPerimetro = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -208,6 +209,9 @@ public class frmPaint extends javax.swing.JFrame {
             }
         });
 
+        chkPerimetro.setForeground(new java.awt.Color(0, 0, 0));
+        chkPerimetro.setText("Exibir Perímetro");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -225,22 +229,27 @@ public class frmPaint extends javax.swing.JFrame {
                         .addGap(42, 42, 42))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(chkExibirCompr)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnCirculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnRetangulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(42, 42, 42)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnCilindro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnPiramide, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(chkArea, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                                .addGap(142, 142, 142)))
+                        .addGap(41, 41, 41))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(chkPerimetro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCirculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnRetangulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(42, 42, 42)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCilindro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnPiramide, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(chkArea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(142, 142, 142)))
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlCorExterna, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                    .addComponent(pnlCorExterna, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
                     .addComponent(pnlCorInterna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
@@ -286,7 +295,9 @@ public class frmPaint extends javax.swing.JFrame {
                                     .addComponent(chkArea)
                                     .addComponent(chkExibirCompr))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSpray, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnSpray, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(chkPerimetro))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnBorracha, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(22, 22, 22))))
@@ -359,6 +370,7 @@ public class frmPaint extends javax.swing.JFrame {
             retangulo.cor = pnlCorExterna.getBackground();
             retangulo.corInterna = pnlCorInterna.getBackground();
             retangulo.exibirArea = chkArea.isSelected();
+            retangulo.exibirPerimetro = chkPerimetro.isSelected();
             retangulo.x = evt.getX();
             retangulo.y = evt.getY();
         }
@@ -370,6 +382,7 @@ public class frmPaint extends javax.swing.JFrame {
         }
         else if(tipoFigura == TipoFigura.tfCirculo) {
             circulo.exibirArea = chkArea.isSelected();
+            circulo.exibirPerimetro = chkPerimetro.isSelected();
             circulo.x = evt.getX();
             circulo.y = evt.getY();
         }
@@ -463,6 +476,7 @@ public class frmPaint extends javax.swing.JFrame {
     private javax.swing.JButton btnSpray;
     private javax.swing.JCheckBox chkArea;
     private javax.swing.JCheckBox chkExibirCompr;
+    private javax.swing.JCheckBox chkPerimetro;
     private javax.swing.JColorChooser jColorChooser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
