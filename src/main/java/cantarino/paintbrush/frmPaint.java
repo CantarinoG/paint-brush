@@ -1,5 +1,6 @@
 package cantarino.paintbrush;
 
+import java.awt.Color;
 import javax.swing.JFrame;
 
 public class frmPaint extends javax.swing.JFrame {
@@ -15,6 +16,20 @@ public class frmPaint extends javax.swing.JFrame {
     public frmPaint() {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        btnDesenhar.setBackground(Color.LIGHT_GRAY);
+    }
+    
+    private void limparSelecao() {
+        btnDesenhar.setBackground(Color.WHITE);
+        btnPonto.setBackground(Color.WHITE);
+        btnReta.setBackground(Color.WHITE);
+        btnSpray.setBackground(Color.WHITE);
+        btnBorracha.setBackground(Color.WHITE);
+        btnPoligono.setBackground(Color.WHITE);
+        btnCirculo.setBackground(Color.WHITE);
+        btnRetangulo.setBackground(Color.WHITE);
+        btnPiramide.setBackground(Color.WHITE);
+        btnCilindro.setBackground(Color.WHITE);
     }
 
     @SuppressWarnings("unchecked")
@@ -341,34 +356,50 @@ public class frmPaint extends javax.swing.JFrame {
 
     private void btnPontoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPontoMouseClicked
         tipoFigura = tipoFigura.tfPonto;
+        limparSelecao();
+        btnPonto.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_btnPontoMouseClicked
 
     private void btnRetaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRetaMouseClicked
         tipoFigura = tipoFigura.tfReta;
+        limparSelecao();
+        btnReta.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_btnRetaMouseClicked
 
     private void btnSprayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSprayMouseClicked
         tipoFigura = tipoFigura.tfSpray;
+        limparSelecao();
+        btnSpray.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_btnSprayMouseClicked
 
     private void btnBorrachaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBorrachaMouseClicked
         tipoFigura = tipoFigura.tfBorracha;
+        limparSelecao();
+        btnBorracha.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_btnBorrachaMouseClicked
 
     private void btnCirculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCirculoMouseClicked
         tipoFigura = tipoFigura.tfCirculo;
+        limparSelecao();
+        btnCirculo.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_btnCirculoMouseClicked
 
     private void btnRetanguloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRetanguloMouseClicked
         tipoFigura = tipoFigura.tfRetangulo;
+        limparSelecao();
+        btnRetangulo.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_btnRetanguloMouseClicked
 
     private void btnPiramideMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPiramideMouseClicked
         tipoFigura = tipoFigura.tfPiramide;
+        limparSelecao();
+        btnPiramide.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_btnPiramideMouseClicked
 
     private void btnCilindroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCilindroMouseClicked
         tipoFigura = tipoFigura.tfCilindro;
+        limparSelecao();
+        btnCilindro.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_btnCilindroMouseClicked
 
     private void pnlPaintMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPaintMousePressed
@@ -446,6 +477,8 @@ public class frmPaint extends javax.swing.JFrame {
 
     private void btnDesenharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDesenharMouseClicked
         tipoFigura = TipoFigura.tfDesenhar;
+        limparSelecao();
+        btnDesenhar.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_btnDesenharMouseClicked
 
     private void chkExibirComprActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkExibirComprActionPerformed
@@ -454,6 +487,8 @@ public class frmPaint extends javax.swing.JFrame {
 
     private void btnPoligonoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPoligonoMouseClicked
         tipoFigura = TipoFigura.tfPoligono;
+        limparSelecao();
+        btnPoligono.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_btnPoligonoMouseClicked
 
     public static void main(String args[]) {
