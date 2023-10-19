@@ -20,6 +20,7 @@ public class frmPaint extends javax.swing.JFrame {
     private Spray spray = new Spray();
     private Poligono poligono = new Poligono();
     private Cilindro cilindro = new Cilindro();
+    private Piramide piramide = new Piramide();
     
     public frmPaint() {
         initComponents();
@@ -489,6 +490,12 @@ public class frmPaint extends javax.swing.JFrame {
             cilindro.x = evt.getX();
             cilindro.y = evt.getY();
         }
+        else if(tipoFigura == TipoFigura.tfPiramide) {
+            piramide.cor = pnlCorExterna.getBackground();
+            piramide.exibirVolume = chkVolume.isSelected();
+            piramide.x = evt.getX();
+            piramide.y = evt.getY();
+        }
     }//GEN-LAST:event_pnlPaintMousePressed
 
     private void pnlPaintMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPaintMouseReleased
@@ -513,6 +520,13 @@ public class frmPaint extends javax.swing.JFrame {
             if(evt.getX() < cilindro.x) cilindro.x = evt.getX();
             if(evt.getY() < cilindro.y) cilindro.y = evt.getY();
             cilindro.desenhar(pnlPaint.getGraphics());
+        } else if(tipoFigura == TipoFigura.tfPiramide) {
+            piramide.base = Math.abs(evt.getX() - piramide.x);
+            piramide.altura = Math.abs(evt.getY() - piramide.y);
+            piramide.largura = piramide.altura/3;
+            if(evt.getX() < piramide.x) piramide.x = evt.getX();
+            if(evt.getY() < piramide.y) piramide.y = evt.getY();
+            piramide.desenhar(pnlPaint.getGraphics());
         }
     }//GEN-LAST:event_pnlPaintMouseReleased
 
