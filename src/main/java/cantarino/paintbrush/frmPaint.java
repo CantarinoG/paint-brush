@@ -317,8 +317,10 @@ public class frmPaint extends javax.swing.JFrame {
 
     private void pnlPaintMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPaintMouseReleased
         if (tipoFigura == TipoFigura.tfRetangulo) {
-            retangulo.base = evt.getX() - retangulo.x;
-            retangulo.largura = evt.getY() - retangulo.y;
+            retangulo.base = Math.abs(evt.getX() - retangulo.x);
+            retangulo.largura = Math.abs(evt.getY() - retangulo.y);
+            if(evt.getX() < retangulo.x) retangulo.x = evt.getX();
+            if(evt.getY() < retangulo.y) retangulo.y = evt.getY();
             retangulo.desenhar(pnlPaint.getGraphics());
         }
     }//GEN-LAST:event_pnlPaintMouseReleased
