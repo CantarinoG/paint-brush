@@ -8,6 +8,7 @@ public class frmPaint extends javax.swing.JFrame {
     private TipoFigura tipoFigura = TipoFigura.tfPonto; // variável controladora do tipo figura
     private Retangulo retangulo = new Retangulo();
     private Reta reta = new Reta();
+    private Circulo circulo = new Circulo();
     
     public frmPaint() {
         initComponents();
@@ -318,6 +319,10 @@ public class frmPaint extends javax.swing.JFrame {
             reta.x = evt.getX();
             reta.y = evt.getY();
         }
+        else if(tipoFigura == TipoFigura.tfCirculo) {
+            circulo.x = evt.getX();
+            circulo.y = evt.getY();
+        }
     }//GEN-LAST:event_pnlPaintMousePressed
 
     private void pnlPaintMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPaintMouseReleased
@@ -331,6 +336,11 @@ public class frmPaint extends javax.swing.JFrame {
             reta.x1 = evt.getX();
             reta.y1 = evt.getY();
             reta.desenhar(pnlPaint.getGraphics());
+        } else if(tipoFigura == TipoFigura.tfCirculo) {
+            circulo.raio = (int) Math.sqrt(Math.pow(evt.getX() - circulo.x, 2) + Math.pow(evt.getY() - circulo.y, 2));
+            circulo.corInterna = pnlCorInterna.getBackground();
+            circulo.cor = pnlCorExterna.getBackground();
+            circulo.desenhar(pnlPaint.getGraphics());
         }
     }//GEN-LAST:event_pnlPaintMouseReleased
 
