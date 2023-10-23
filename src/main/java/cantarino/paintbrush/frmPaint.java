@@ -16,7 +16,7 @@ public class frmPaint extends javax.swing.JFrame {
     private Retangulo retangulo = new Retangulo();
     private Reta reta = new Reta();
     private Circulo circulo = new Circulo();
-    private Borracha borracha = new Borracha(30);
+    private Borracha borracha = new Borracha();
     private Spray spray = new Spray();
     private Poligono poligono = new Poligono();
     private Cilindro cilindro = new Cilindro();

@@ -4,8 +4,8 @@ import java.awt.Graphics;
 
 public class Borracha extends Retangulo {
     
-    public Borracha(int largura) {
-        this.largura = largura;
+    public Borracha() {
+        this.largura = 30;
     }
     
     @Override
