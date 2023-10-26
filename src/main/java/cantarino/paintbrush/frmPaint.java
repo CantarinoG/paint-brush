@@ -6,12 +6,11 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
 
 public class frmPaint extends javax.swing.JFrame {
 
-    private enum TipoFigura {tfPonto, tfReta, tfCirculo, tfRetangulo, tfSpray, tfBorracha, tfPiramide, tfCilindro, tfDesenhar, tfPoligono}
+    private enum TipoFigura {tfReta, tfCirculo, tfRetangulo, tfSpray, tfBorracha, tfPiramide, tfCilindro, tfDesenhar, tfPoligono}
     private TipoFigura tipoFigura = TipoFigura.tfDesenhar; // variável controladora do tipo figura
     private Retangulo retangulo = new Retangulo();
     private Reta reta = new Reta();
@@ -31,7 +30,6 @@ public class frmPaint extends javax.swing.JFrame {
     
     private void limparSelecao() {
         btnDesenhar.setBackground(Color.WHITE);
-        btnPonto.setBackground(Color.WHITE);
         btnReta.setBackground(Color.WHITE);
         btnSpray.setBackground(Color.WHITE);
         btnBorracha.setBackground(Color.WHITE);
@@ -48,7 +46,6 @@ public class frmPaint extends javax.swing.JFrame {
 
         pnlPaint = new javax.swing.JPanel();
         jColorChooser = new javax.swing.JColorChooser();
-        btnPonto = new javax.swing.JButton();
         btnReta = new javax.swing.JButton();
         btnCirculo = new javax.swing.JButton();
         btnRetangulo = new javax.swing.JButton();
@@ -96,17 +93,6 @@ public class frmPaint extends javax.swing.JFrame {
             pnlPaintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 394, Short.MAX_VALUE)
         );
-
-        btnPonto.setBackground(new java.awt.Color(255, 255, 255));
-        btnPonto.setForeground(new java.awt.Color(0, 0, 0));
-        btnPonto.setText("Ponto");
-        btnPonto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnPonto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnPonto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnPontoMouseClicked(evt);
-            }
-        });
 
         btnReta.setBackground(new java.awt.Color(255, 255, 255));
         btnReta.setForeground(new java.awt.Color(0, 0, 0));
@@ -284,7 +270,6 @@ public class frmPaint extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnPonto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btnReta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btnSpray, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btnBorracha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -346,13 +331,12 @@ public class frmPaint extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnDesenhar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnPoligono, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnPiramide, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnPonto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnDesenhar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnReta, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
@@ -400,12 +384,6 @@ public class frmPaint extends javax.swing.JFrame {
         pnlCorInterna.setBackground(jColorChooser.getColor());
     }//GEN-LAST:event_pnlCorInternaMouseClicked
 
-    private void btnPontoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPontoMouseClicked
-        tipoFigura = tipoFigura.tfPonto;
-        limparSelecao();
-        btnPonto.setBackground(Color.LIGHT_GRAY);
-    }//GEN-LAST:event_btnPontoMouseClicked
-
     private void btnRetaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRetaMouseClicked
         tipoFigura = tipoFigura.tfReta;
         limparSelecao();
@@ -449,7 +427,7 @@ public class frmPaint extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCilindroMouseClicked
 
     private void pnlPaintMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPaintMousePressed
-        if (tipoFigura == TipoFigura.tfPonto) {
+        if (tipoFigura == TipoFigura.tfDesenhar) {
             Ponto p = new Ponto();
             p.cor = pnlCorExterna.getBackground();
             p.x = evt.getX();
@@ -610,7 +588,6 @@ public class frmPaint extends javax.swing.JFrame {
     private javax.swing.JButton btnDesenhar;
     private javax.swing.JButton btnPiramide;
     private javax.swing.JButton btnPoligono;
-    private javax.swing.JButton btnPonto;
     private javax.swing.JButton btnReta;
     private javax.swing.JButton btnRetangulo;
     private javax.swing.JButton btnSpray;
