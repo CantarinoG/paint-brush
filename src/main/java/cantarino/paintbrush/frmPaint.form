@@ -35,16 +35,8 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="btnDesenhar" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblLink" min="0" pref="0" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="btnDesenhar" pref="180" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="lblLargura" min="-2" max="-2" attributes="0"/>
@@ -91,29 +83,34 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="btnPoligono" max="32767" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="btnCilindro" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="btnPoligono" max="32767" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="btnCilindro" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnPiramide" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="210" max="-2" attributes="0"/>
+                                      <Component id="chkVolume" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnPiramide" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="pnlCorExterna" alignment="0" min="-2" pref="156" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" alignment="0" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabel1" max="-2" attributes="0"/>
+                                  <Component id="pnlCorInterna" min="-2" pref="156" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="210" max="-2" attributes="0"/>
-                              <Component id="chkVolume" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="lblLink" alignment="1" pref="854" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="pnlCorExterna" alignment="0" min="-2" pref="156" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="0" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jLabel1" max="-2" attributes="0"/>
-                          <Component id="pnlCorInterna" min="-2" pref="156" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <Component id="jColorChooser" min="-2" pref="672" max="-2" attributes="0"/>
@@ -127,59 +124,55 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="pnlPaint" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                                  <Component id="lblLink" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="btnCirculo" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <Component id="btnRetangulo" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <Component id="btnReta" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <Component id="btnSpray" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <Component id="btnDesenhar" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <Component id="btnBorracha" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lblLargura" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="sldLargura" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblDensidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="sldDensidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="chkExibirCompr" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="chkPerimetro" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblArea" min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="sldArea" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="chkArea" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="btnPoligono" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                                  <Component id="btnCilindro" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                                  <Component id="btnPiramide" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="btnCirculo" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="btnRetangulo" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="btnReta" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="btnSpray" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="btnDesenhar" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="btnBorracha" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="pnlCorExterna" min="-2" pref="50" max="-2" attributes="0"/>
-                              <Component id="pnlCorInterna" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblLargura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="sldLargura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblDensidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="sldDensidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkExibirCompr" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkPerimetro" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblArea" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="sldArea" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="chkArea" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="btnPoligono" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <Component id="btnCilindro" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <Component id="btnPiramide" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="pnlCorExterna" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="pnlCorInterna" min="-2" pref="50" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="chkVolume" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="chkVolume" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="lblLink" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jColorChooser" min="-2" pref="294" max="-2" attributes="0"/>
               </Group>
